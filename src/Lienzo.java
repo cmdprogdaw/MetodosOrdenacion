@@ -24,7 +24,7 @@ public class Lienzo extends JPanel {
 					repaint(); //provoca que en algún momento (no se sabe cuando) el sistema va a invocar el método paint component
 				}
 				else if (e.getKeyCode() == KeyEvent.VK_O) { //cuando pulsas la o
-					ordenarVector();
+					inserccionDirecta();
 					repaint();
 				}
 			}
@@ -39,7 +39,8 @@ public class Lienzo extends JPanel {
 		}
 	}
 	
-	private void ordenarVector() {
+	private void inserccionDirecta() {
+		//esto es una búsqueda lineal
 		for (int i=1; i<vector.length; i++) {
 			int j = 0;
 			while (j<i && vector[j] < vector[i])
